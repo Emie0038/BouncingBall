@@ -10,7 +10,7 @@ class BounceThread extends JFrame {
 
     public BounceThread() {
         setSize(500, 300);
-        setTitle("Bouncing Ball                Group_Amazing_People");
+        setTitle("Bouncing Ball                *Group_Amazing_People*");
 
         Container container = getContentPane();
         canvas = new JPanel();
