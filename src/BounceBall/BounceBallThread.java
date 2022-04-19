@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class BounceBallThread {
     public static void main(String[] args) {
-        JFrame frame = new BounceThread();
+        JFrame frame = new BounceBall();
         frame.show();
     }
 }

@@ -5,12 +5,12 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class BounceThread extends JFrame {
+public class BounceBall extends JFrame {
     private JPanel canvas;
 
-    public BounceThread() {
+    public BounceBall() {
         setSize(500, 300);
-        setTitle("Bouncing Ball                *Group_Amazing_People*");
+        setTitle("Bouncing Ball                *Group_of_Amazing_People*");
 
         Container container = getContentPane();
         canvas = new JPanel();
