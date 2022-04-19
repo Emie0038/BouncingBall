@@ -8,7 +8,7 @@ import static java.awt.Color.BLUE;
 
 public class Ball extends Thread {
     JPanel box;
-    int width = 20, height = 20, front = 0, back = 0, speedDown = 3, speedSide = 3;
+    int width = 20, height = 20, front = 0, back = 0, bounceDown = 3, bounceSide = 3;
 
     public Ball(JPanel panel) {
         box = panel;
@@ -26,25 +26,25 @@ public class Ball extends Thread {
         Graphics graphics = box.getGraphics();
         graphics.setXORMode(box.getBackground());
         graphics.fillOval(front, back, width, height);
-        front += speedDown;
-        back += speedSide;
+        front += bounceDown;
+        back += bounceSide;
 
         Dimension dimension = box.getSize();
         if (front < 0) {
             front = 0;
-            speedDown = -speedDown;
+            bounceDown = -bounceDown;
         }
         if (front + width >= dimension.width) {
             front = dimension.width - width;
-            speedDown = -speedDown;
+            bounceDown = -bounceDown;
         }
         if (back < 0) {
             back = 0;
-            speedSide = -speedSide;
+            bounceSide = -bounceSide;
         }
         if (back + height >= dimension.height) {
             back = dimension.height - height;
-            speedSide = -speedSide;
+            bounceSide = -bounceSide;
         }
         graphics.fillOval(front, back, width, height);
         graphics.dispose();
@@ -53,9 +53,9 @@ public class Ball extends Thread {
     public void run() {
         try {
             draw();
-            for (int i = 1; i <= 1000; i++) {
+            for (int i = 1; i <= 2000; i++) {
                 move();
-                sleep(10);
+                sleep(20);
             }
         } catch (Exception e) {
         }
