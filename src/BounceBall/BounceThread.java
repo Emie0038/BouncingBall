@@ -16,6 +16,7 @@ class BounceThread extends JFrame {
         canvas = new JPanel();
         container.add(canvas, "Center");
 
+
         JPanel panel = new JPanel();
         add(panel, "Start", new ActionListener() {
             public void actionPerformed(ActionEvent evt) {

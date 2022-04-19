@@ -2,12 +2,13 @@ package BounceBall;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.InvalidClassException;
 
 import static java.awt.Color.BLUE;
 
 class Ball extends Thread {
     JPanel box;
-    int side1 = 20, side2 = 20, front = 0, back = 0, speedDown = 3, speedSide = 3;
+    int width = 20, height = 20, front = 0, back = 0, speedDown = 3, speedSide = 3;
 
     public Ball(JPanel panel) {
         box = panel;
@@ -15,7 +16,7 @@ class Ball extends Thread {
 
     public void draw() {
         Graphics graphics = box.getGraphics();
-        graphics.fillOval( front, back, side1, side2);
+        graphics.fillOval( front, back, width, height);
         graphics.dispose();
     }
 
@@ -24,27 +25,28 @@ class Ball extends Thread {
             return;
         Graphics graphics = box.getGraphics();
         graphics.setXORMode(box.getBackground());
-        graphics.fillOval(front, back, side1, side2);
+        graphics.fillOval(front, back, width, height);
         front += speedDown;
         back += speedSide;
+
         Dimension dimension = box.getSize();
         if (front < 0) {
             front = 0;
             speedDown = -speedDown;
         }
-        if (front + side1 >= dimension.width) {
-            front = dimension.width - side1;
+        if (front + width >= dimension.width) {
+            front = dimension.width - width;
             speedDown = -speedDown;
         }
         if (back < 0) {
             back = 0;
             speedSide = -speedSide;
         }
-        if (back + side2 >= dimension.height) {
-            back = dimension.height - side2;
+        if (back + height >= dimension.height) {
+            back = dimension.height - height;
             speedSide = -speedSide;
         }
-        graphics.fillOval(front, back, side1, side2);
+        graphics.fillOval(front, back, width, height);
         graphics.dispose();
     }
 
