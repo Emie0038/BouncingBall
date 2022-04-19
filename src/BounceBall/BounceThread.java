@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-class BounceThread extends JFrame {
+public class BounceThread extends JFrame {
     private JPanel canvas;
 
     public BounceThread() {

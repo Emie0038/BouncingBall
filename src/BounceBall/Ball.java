@@ -6,7 +6,7 @@ import java.io.InvalidClassException;
 
 import static java.awt.Color.BLUE;
 
-class Ball extends Thread {
+public class Ball extends Thread {
     JPanel box;
     int width = 20, height = 20, front = 0, back = 0, speedDown = 3, speedSide = 3;
 
