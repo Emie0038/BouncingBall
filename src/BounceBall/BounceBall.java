@@ -42,7 +42,7 @@ public class BounceBall extends JFrame {
 
     public void add(Container container, String title, ActionListener
             listener) {
-        JRadioButton button = new JRadioButton(title);
+        JButton button = new JButton(title);
         container.add(button);
         button.addActionListener(listener);
     }
